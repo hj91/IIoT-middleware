@@ -1,0 +1,2866 @@
+[
+    {
+        "id": "a56a147b.9fd3a8",
+        "type": "tab",
+        "label": "opcua to influxdb",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "7c142d96.e7e574",
+        "type": "tab",
+        "label": "add mqtt values in influxdb",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "bc9e283a.421548",
+        "type": "tab",
+        "label": "opcua to influxdb",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "1a83e31.3cb421d",
+        "type": "tab",
+        "label": "nodejs opcua server reading",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "f2cd0eac.a5df1",
+        "type": "tab",
+        "label": "kepware",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "7b92dedd.5f228",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://192.168.1.10:4840/",
+        "secpol": "None",
+        "secmode": "None",
+        "login": false
+    },
+    {
+        "id": "d96329a7.167f18",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "7cdce5bc.ddaa2c",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "7cdce5bc.ddaa2c",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "cff98b62.009678",
+        "type": "tls-config",
+        "name": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "",
+        "servername": "",
+        "verifyservercert": false
+    },
+    {
+        "id": "98103d9b.71a4",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "13a714f0.51044b",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://192.168.1.7:4840/",
+        "secpol": "None",
+        "secmode": "NONE",
+        "login": false
+    },
+    {
+        "id": "fe00ca78.ac2a68",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.1.10",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "opcua/relayon",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "ns=1;s=Control Relay number 0.",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "d562144c.395898",
+        "type": "modbus-client",
+        "name": "local",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "tcpHost": "192.168.1.3",
+        "tcpPort": "502",
+        "tcpType": "TPC-RTU-BUFFERED",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "unit_id": "1",
+        "commandDelay": "1",
+        "clientTimeout": "10000",
+        "reconnectTimeout": "2000"
+    },
+    {
+        "id": "fc44051.c6ce5f8",
+        "type": "ui_group",
+        "name": "Modbus Test",
+        "tab": "5ca5a555.882a7c",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "f913f647.728a18",
+        "type": "modbus-client",
+        "name": "local",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "tcpHost": "192.168.1.3",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "unit_id": "1",
+        "commandDelay": "1",
+        "clientTimeout": "1000",
+        "reconnectTimeout": "200"
+    },
+    {
+        "id": "5ca5a555.882a7c",
+        "type": "ui_tab",
+        "name": "Modbus",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "6520e581.c8a7cc",
+        "type": "modbus-client",
+        "name": "esp-temp-rh-dht",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "tcpHost": "192.168.1.4",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "unit_id": "1",
+        "commandDelay": "1",
+        "clientTimeout": "1000",
+        "reconnectTimeout": "2000"
+    },
+    {
+        "id": "875c8f7e.2c4a5",
+        "type": "modbus-client",
+        "name": "Modbus Server",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": true,
+        "tcpHost": "192.168.1.9",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "unit_id": "1",
+        "commandDelay": "1000",
+        "clientTimeout": "2000",
+        "reconnectTimeout": "1000"
+    },
+    {
+        "id": "457763b1.1fd7cc",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "88b325b0.322568",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "120",
+        "cleansession": true,
+        "birthTopic": "harshad/temp",
+        "birthQos": "0",
+        "birthRetain": "true",
+        "birthPayload": "1",
+        "closeTopic": "",
+        "closePayload": "",
+        "willTopic": "harshad/RH",
+        "willQos": "0",
+        "willRetain": "true",
+        "willPayload": "0"
+    },
+    {
+        "id": "eca23842.df8ef8",
+        "type": "ui_group",
+        "name": "Control",
+        "tab": "5440b00a.02569",
+        "order": 1,
+        "disp": true,
+        "width": "4",
+        "collapse": false
+    },
+    {
+        "id": "bc49ebb0.f53ee8",
+        "type": "ui_group",
+        "name": "Status",
+        "tab": "5440b00a.02569",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "5440b00a.02569",
+        "type": "ui_tab",
+        "name": "Logger",
+        "icon": "dashboard"
+    },
+    {
+        "id": "d76e9c7e.f7f9",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://192.168.1.7:49320/KEPServerEX",
+        "secpol": "None",
+        "secmode": "NONE",
+        "login": false
+    },
+    {
+        "id": "3b5af371.ade24c",
+        "type": "mqtt-broker",
+        "broker": "mqtt.sensetecnic.com",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "b050ecb9.199a5",
+        "type": "modbus-client",
+        "name": "Serial_2400_8_N_1",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": true,
+        "tcpHost": "192.168.0.7",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB0",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "unit_id": "1",
+        "commandDelay": "30",
+        "clientTimeout": "2000",
+        "reconnectTimeout": "5000"
+    },
+    {
+        "id": "d0e5b4b8.0ef7e8",
+        "type": "ui_group",
+        "name": "SDM120 Energy Meter",
+        "tab": "b16b23e7.8cecb",
+        "order": 2,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "92119de5.b7d96",
+        "type": "mqtt-broker",
+        "name": "raspberrypi",
+        "broker": "192.168.1.50",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "b16b23e7.8cecb",
+        "type": "ui_tab",
+        "name": "Modbus",
+        "icon": "memory",
+        "order": 15
+    },
+    {
+        "id": "8c1ef15f.3c9ea",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "a9372f28.dc8ee",
+        "type": "mqtt-broker",
+        "broker": "mqtt.sensetecnic.com",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "4d9826d2.163c08",
+        "type": "ui_group",
+        "name": "OPC-UA",
+        "tab": "5ca5a555.882a7c",
+        "order": 2,
+        "disp": true,
+        "width": "10",
+        "collapse": false
+    },
+    {
+        "id": "7814d939.ff3028",
+        "type": "ui_group",
+        "name": "Tank",
+        "tab": "",
+        "disp": true,
+        "width": "10"
+    },
+    {
+        "id": "7caa3a92.d11504",
+        "type": "ui_group",
+        "name": "Sprayer",
+        "tab": "",
+        "disp": true,
+        "width": "10"
+    },
+    {
+        "id": "a7086147.c5f8f",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "e10fae75.7a21",
+        "type": "modbus-client",
+        "name": "Serial_2400_8_N_1",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": true,
+        "tcpHost": "10.10.100.254",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB0",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "unit_id": "",
+        "commandDelay": 30,
+        "clientTimeout": 2000,
+        "reconnectTimeout": 5000
+    },
+    {
+        "id": "efbfc353.809ef",
+        "type": "ui_group",
+        "name": "Logo PLC ",
+        "tab": "41f34d11.16ca94",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "2660b452.7b5b6c",
+        "type": "mqtt-broker",
+        "name": "raspberrypi",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "41f34d11.16ca94",
+        "type": "ui_tab",
+        "name": "Modbus",
+        "icon": "memory",
+        "order": 15
+    },
+    {
+        "id": "86d185c2.fdcd28",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "ba9412fb.b2df2",
+        "type": "ui_group",
+        "name": "OPC-UA",
+        "tab": "6e27c172.9279e",
+        "order": 1,
+        "disp": true,
+        "width": "10",
+        "collapse": true
+    },
+    {
+        "id": "59e370cb.f4108",
+        "type": "ui_group",
+        "name": "Tank",
+        "tab": "6e27c172.9279e",
+        "order": 2,
+        "disp": true,
+        "width": "10",
+        "collapse": false
+    },
+    {
+        "id": "a8d3da97.a0be38",
+        "type": "ui_group",
+        "name": "Sprayer",
+        "tab": "c6b2d3c3.ca81",
+        "order": 1,
+        "disp": true,
+        "width": "10",
+        "collapse": false
+    },
+    {
+        "id": "9e7a62de.f6e6",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://192.168.1.25:49320",
+        "secpol": "None",
+        "secmode": "NONE",
+        "login": false
+    },
+    {
+        "id": "495d9900.9f19e8",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "6e27c172.9279e",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "c6b2d3c3.ca81",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "3f30a730.0c9318",
+        "type": "modbus-client",
+        "name": "modsim",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "tcpHost": "10.10.100.100",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "unit_id": "1",
+        "commandDelay": "1",
+        "clientTimeout": "1000",
+        "reconnectTimeout": "2000"
+    },
+    {
+        "id": "dea6ac4e.6aa22",
+        "type": "ui_group",
+        "name": "Read",
+        "tab": "4542595.dbabea8",
+        "order": 3,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "9da34cf8.cccb7",
+        "type": "modbus-client",
+        "name": "LOGO_PLC",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": true,
+        "tcpHost": "192.168.0.3",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB0",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "57600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "unit_id": 1,
+        "commandDelay": 1,
+        "clientTimeout": 1000,
+        "reconnectTimeout": 2000
+    },
+    {
+        "id": "f4eaff6f.e991f",
+        "type": "ui_group",
+        "name": "Output",
+        "tab": "4542595.dbabea8",
+        "order": 5,
+        "disp": true,
+        "width": "24"
+    },
+    {
+        "id": "5df3526a.17b76c",
+        "type": "ui_group",
+        "name": "Write",
+        "tab": "4542595.dbabea8",
+        "order": 4,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "69c41f82.52081",
+        "type": "ui_group",
+        "name": "TCP",
+        "tab": "4542595.dbabea8",
+        "order": 1,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "a7e05d28.06353",
+        "type": "ui_group",
+        "name": "Serial",
+        "tab": "4542595.dbabea8",
+        "order": 2,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "4542595.dbabea8",
+        "type": "ui_tab",
+        "name": "Modscan",
+        "icon": "dashboard",
+        "order": 2
+    },
+    {
+        "id": "24fa3d0f.772e82",
+        "type": "modbus-client",
+        "name": "local",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "tcpHost": "127.0.0.1",
+        "tcpPort": "10502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "unit_id": 1,
+        "commandDelay": 1,
+        "clientTimeout": 1000,
+        "reconnectTimeout": 2000
+    },
+    {
+        "id": "2d5a6a1c.bb6b46",
+        "type": "ui_group",
+        "name": "Modbus Test",
+        "tab": "d24d485b.aebeb8",
+        "order": 1,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "d2d7dbb7.1c3918",
+        "type": "modbus-client",
+        "name": "local",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "tcpHost": "127.0.0.1",
+        "tcpPort": "10502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "unit_id": 1,
+        "commandDelay": 1,
+        "clientTimeout": 1000,
+        "reconnectTimeout": 2000
+    },
+    {
+        "id": "d24d485b.aebeb8",
+        "type": "ui_tab",
+        "name": "Modbus",
+        "icon": "dashboard"
+    },
+    {
+        "id": "e7f011ce.ed14a",
+        "type": "modbus-client",
+        "name": "LOGO_PLC",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": true,
+        "tcpHost": "192.168.0.3",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB0",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "unit_id": "1",
+        "commandDelay": "30",
+        "clientTimeout": "2000",
+        "reconnectTimeout": "5000"
+    },
+    {
+        "id": "fe389997.0d7d28",
+        "type": "ui_group",
+        "name": "SDM120 Energy Meter",
+        "tab": "e8811d95.df73f",
+        "order": 2,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "dc5a6f8b.497ba",
+        "type": "mqtt-broker",
+        "name": "raspberrypi",
+        "broker": "192.168.1.50",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "e8811d95.df73f",
+        "type": "ui_tab",
+        "name": "Modbus",
+        "icon": "memory",
+        "order": 15
+    },
+    {
+        "id": "24a9c821.c09708",
+        "type": "modbus-client",
+        "name": "scan",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "tcpHost": "10.10.100.254",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "unit_id": "1",
+        "commandDelay": "1",
+        "clientTimeout": "1000",
+        "reconnectTimeout": "2000"
+    },
+    {
+        "id": "e323fa5e.336fe8",
+        "type": "ui_group",
+        "name": "Read",
+        "tab": "a140208f.11401",
+        "order": 3,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "e752794.f076f88",
+        "type": "modbus-client",
+        "name": "MODSCAN",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "tcpHost": "10.10.100.254",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB0",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "57600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "unit_id": "1",
+        "commandDelay": "1",
+        "clientTimeout": "1000",
+        "reconnectTimeout": "2000"
+    },
+    {
+        "id": "71bce93a.62c7c8",
+        "type": "ui_group",
+        "name": "Output",
+        "tab": "a140208f.11401",
+        "order": 5,
+        "disp": true,
+        "width": "24"
+    },
+    {
+        "id": "4dbc84dd.b2ae9c",
+        "type": "ui_group",
+        "name": "Write",
+        "tab": "a140208f.11401",
+        "order": 4,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "5e7d9ee2.3ed6c",
+        "type": "ui_group",
+        "name": "TCP",
+        "tab": "a140208f.11401",
+        "order": 1,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "b8648d57.92d8a",
+        "type": "ui_group",
+        "name": "Serial",
+        "tab": "a140208f.11401",
+        "order": 2,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "a140208f.11401",
+        "type": "ui_tab",
+        "name": "Modscan",
+        "icon": "dashboard",
+        "order": 2
+    },
+    {
+        "id": "9c15230a.c6efb",
+        "type": "ui_group",
+        "name": "Charts",
+        "tab": "cd92b97f.125698",
+        "order": 2,
+        "disp": false,
+        "width": "6"
+    },
+    {
+        "id": "9bbcf94e.380b88",
+        "type": "ui_group",
+        "name": "Inputs",
+        "tab": "cd92b97f.125698",
+        "order": 1,
+        "disp": false,
+        "width": "6"
+    },
+    {
+        "id": "e9418ddd.e7674",
+        "type": "ui_group",
+        "name": "Group 3",
+        "tab": "cd92b97f.125698",
+        "order": 3,
+        "disp": false,
+        "width": "6"
+    },
+    {
+        "id": "cd92b97f.125698",
+        "type": "ui_tab",
+        "name": "Charts",
+        "icon": "dashboard",
+        "order": 2
+    },
+    {
+        "id": "91f42f6a.bc1ef",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "65cca96c.7f8fb8",
+        "type": "modbus-client",
+        "name": "Serial_2400_8_N_1",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": true,
+        "tcpHost": "10.10.100.254",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB0",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "unit_id": "",
+        "commandDelay": 30,
+        "clientTimeout": 2000,
+        "reconnectTimeout": 5000
+    },
+    {
+        "id": "4710aac6.e59264",
+        "type": "ui_group",
+        "name": "SDM120 Energy Meter",
+        "tab": "ca74a61.183d558",
+        "order": 2,
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "7ba58cb3.779734",
+        "type": "mqtt-broker",
+        "name": "amazon aws",
+        "broker": "http://34.203.249.121/",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "ca74a61.183d558",
+        "type": "ui_tab",
+        "name": "Modbus",
+        "icon": "memory",
+        "order": 15
+    },
+    {
+        "id": "940e93d3.ef07f",
+        "type": "tls-config",
+        "name": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "",
+        "servername": "",
+        "verifyservercert": false
+    },
+    {
+        "id": "9738e6a4.66c9e8",
+        "type": "tls-config",
+        "name": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "",
+        "servername": "",
+        "verifyservercert": false
+    },
+    {
+        "id": "b4da10e2.a22dd",
+        "type": "OpcUa-Endpoint",
+        "endpoint": "opc.tcp://192.168.1.10:4842",
+        "secpol": "None",
+        "secmode": "NONE",
+        "login": false
+    },
+    {
+        "id": "bde741aa.fc3ca",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "opcua",
+        "name": "",
+        "usetls": false,
+        "tls": "cff98b62.009678",
+        "influxdbVersion": "1.x"
+    },
+    {
+        "id": "41ca403c.18263",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "kepware",
+        "name": "kepware",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "1.x"
+    },
+    {
+        "id": "71686c0d.63ba44",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "test",
+        "name": "test",
+        "usetls": true,
+        "tls": "940e93d3.ef07f",
+        "influxdbVersion": "1.x"
+    },
+    {
+        "id": "52c91770.0c6b28",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "database",
+        "name": "test 1.8 flux",
+        "usetls": false,
+        "tls": "9738e6a4.66c9e8",
+        "influxdbVersion": "1.x"
+    },
+    {
+        "id": "13714062.13deb",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "randomvalue",
+        "name": "randomvalue",
+        "usetls": false,
+        "tls": "cff98b62.009678",
+        "influxdbVersion": "1.x"
+    },
+    {
+        "id": "4a84dbdb.152c34",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "mqtt",
+        "name": "mqtt",
+        "usetls": false,
+        "tls": "cff98b62.009678",
+        "influxdbVersion": "1.x"
+    },
+    {
+        "id": "97c1c79c.d11fc8",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "opcuapython",
+        "name": "opcuapython",
+        "usetls": false,
+        "tls": "cff98b62.009678",
+        "influxdbVersion": "1.x"
+    },
+    {
+        "id": "c878922a.b3494",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "harshad",
+        "name": "harshad",
+        "usetls": false,
+        "tls": "cff98b62.009678",
+        "influxdbVersion": "1.x"
+    },
+    {
+        "id": "55746e16.44b42",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "randomvalues",
+        "name": "randomvalues",
+        "usetls": false,
+        "tls": "cff98b62.009678",
+        "influxdbVersion": "1.x"
+    },
+    {
+        "id": "e584a0f1.2aa01",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "opcualocal",
+        "name": "opcualocal",
+        "usetls": false,
+        "tls": "cff98b62.009678",
+        "influxdbVersion": "1.x"
+    },
+    {
+        "id": "8c320653.8eff08",
+        "type": "inject",
+        "z": "a56a147b.9fd3a8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload",
+                "v": "Temp",
+                "vt": "str"
+            },
+            {
+                "p": "topic",
+                "v": "ns=2;i=2",
+                "vt": "string"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "ns=2;i=2",
+        "payload": "Temp",
+        "payloadType": "str",
+        "x": 212,
+        "y": 395,
+        "wires": [
+            [
+                "a89b2eb1.42cee"
+            ]
+        ]
+    },
+    {
+        "id": "a89b2eb1.42cee",
+        "type": "OpcUa-Client",
+        "z": "a56a147b.9fd3a8",
+        "endpoint": "7b92dedd.5f228",
+        "action": "subscribe",
+        "deadbandtype": "a",
+        "deadbandvalue": "0",
+        "time": "10",
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "name": "192.168.1.10  server_harry_opc.py",
+        "x": 558,
+        "y": 275,
+        "wires": [
+            [
+                "b6ad896.a19bd78",
+                "22cb13a0.b18fec"
+            ]
+        ]
+    },
+    {
+        "id": "e927559b.33b6a8",
+        "type": "debug",
+        "z": "a56a147b.9fd3a8",
+        "name": "",
+        "active": true,
+        "tosidebar": false,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 905,
+        "y": 441,
+        "wires": []
+    },
+    {
+        "id": "b6ad896.a19bd78",
+        "type": "split",
+        "z": "a56a147b.9fd3a8",
+        "name": "",
+        "splt": ",",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 630,
+        "y": 483,
+        "wires": [
+            [
+                "e927559b.33b6a8",
+                "8c6ba281.1e73b"
+            ]
+        ]
+    },
+    {
+        "id": "2c601c2.1535ce4",
+        "type": "comment",
+        "z": "a56a147b.9fd3a8",
+        "name": "",
+        "info": "This displays the status of sample simulation server \nrunning on localhost \n\nport 4840 \n\n",
+        "x": 205,
+        "y": 269,
+        "wires": []
+    },
+    {
+        "id": "c0e6c392.d3556",
+        "type": "inject",
+        "z": "a56a147b.9fd3a8",
+        "name": "",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "ns=2;i=3",
+        "payload": "Pressure",
+        "payloadType": "str",
+        "x": 169,
+        "y": 571,
+        "wires": [
+            [
+                "95e9cc5e.a4b9c"
+            ]
+        ]
+    },
+    {
+        "id": "c23c4400.779298",
+        "type": "split",
+        "z": "a56a147b.9fd3a8",
+        "name": "",
+        "splt": ",",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 621,
+        "y": 652,
+        "wires": [
+            [
+                "78c884f4.ab3bec",
+                "8c6ba281.1e73b"
+            ]
+        ]
+    },
+    {
+        "id": "78c884f4.ab3bec",
+        "type": "debug",
+        "z": "a56a147b.9fd3a8",
+        "name": "",
+        "active": true,
+        "tosidebar": false,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 858,
+        "y": 638,
+        "wires": []
+    },
+    {
+        "id": "95e9cc5e.a4b9c",
+        "type": "OpcUa-Client",
+        "z": "a56a147b.9fd3a8",
+        "endpoint": "7b92dedd.5f228",
+        "action": "subscribe",
+        "deadbandtype": "a",
+        "deadbandvalue": "0",
+        "time": "10",
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "name": "192.168.1.10  server_harry_opc.py",
+        "x": 508,
+        "y": 570,
+        "wires": [
+            [
+                "c23c4400.779298"
+            ]
+        ]
+    },
+    {
+        "id": "22cb13a0.b18fec",
+        "type": "function",
+        "z": "a56a147b.9fd3a8",
+        "name": "split temp value",
+        "func": "var m = msg.payload[1];\nmsg.payload = m;\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 659,
+        "y": 83,
+        "wires": [
+            [
+                "8628cc62.8e67a"
+            ]
+        ]
+    },
+    {
+        "id": "8628cc62.8e67a",
+        "type": "debug",
+        "z": "a56a147b.9fd3a8",
+        "name": "",
+        "active": true,
+        "tosidebar": false,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 964,
+        "y": 143,
+        "wires": []
+    },
+    {
+        "id": "8c6ba281.1e73b",
+        "type": "join",
+        "z": "a56a147b.9fd3a8",
+        "name": "join opcua messages",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "4",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 960,
+        "y": 525,
+        "wires": [
+            [
+                "aecc95f8.cf07e8",
+                "a973ea7e.1a4fa8"
+            ]
+        ]
+    },
+    {
+        "id": "aecc95f8.cf07e8",
+        "type": "debug",
+        "z": "a56a147b.9fd3a8",
+        "name": "",
+        "active": true,
+        "tosidebar": false,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1251,
+        "y": 481,
+        "wires": []
+    },
+    {
+        "id": "a973ea7e.1a4fa8",
+        "type": "function",
+        "z": "a56a147b.9fd3a8",
+        "name": "convert opcua to influxdb",
+        "func": "var v1 = Number(msg.payload[1]);\nvar v2 = Number(msg.payload[3]);\n\n//msg.payload={measurement:\"harshad\",temp:val1, rh:val2};\nmsg.payload={measurement:\"opcua\",temp:v1, rh:v2};\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1132,
+        "y": 657,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "202437c2.23a0d8",
+        "type": "join",
+        "z": "7c142d96.e7e574",
+        "name": "join mqtt messages",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 650,
+        "y": 286,
+        "wires": [
+            [
+                "afc65efe.f36a8"
+            ]
+        ]
+    },
+    {
+        "id": "ee2c112.4d4ecf",
+        "type": "mqtt in",
+        "z": "7c142d96.e7e574",
+        "name": "",
+        "topic": "influx/value2",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "91f42f6a.bc1ef",
+        "x": 345,
+        "y": 266,
+        "wires": [
+            [
+                "202437c2.23a0d8"
+            ]
+        ]
+    },
+    {
+        "id": "de756fe1.88a73",
+        "type": "mqtt in",
+        "z": "7c142d96.e7e574",
+        "name": "",
+        "topic": "influx/value1",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "91f42f6a.bc1ef",
+        "x": 351,
+        "y": 197,
+        "wires": [
+            [
+                "202437c2.23a0d8"
+            ]
+        ]
+    },
+    {
+        "id": "afc65efe.f36a8",
+        "type": "function",
+        "z": "7c142d96.e7e574",
+        "name": "convert mqtt to influxdb",
+        "func": "var v1 = Number(msg.payload[0]);\nvar v2 = Number(msg.payload[1]);\n\n//msg.payload={measurement:\"harshad\",temp:val1, rh:val2};\nmsg.payload={measurement:\"mqtt\",value1:v1, value2:v2};\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 801,
+        "y": 218,
+        "wires": [
+            [
+                "cf036f7d.91c9b"
+            ]
+        ]
+    },
+    {
+        "id": "cf036f7d.91c9b",
+        "type": "debug",
+        "z": "7c142d96.e7e574",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1064,
+        "y": 136,
+        "wires": []
+    },
+    {
+        "id": "5f30e680.8c9e68",
+        "type": "inject",
+        "z": "bc9e283a.421548",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "ns=2;i=2",
+        "payload": "Temp",
+        "payloadType": "str",
+        "x": 212,
+        "y": 395,
+        "wires": [
+            [
+                "80c17164.11a02"
+            ]
+        ]
+    },
+    {
+        "id": "7bb5dfd7.9087d",
+        "type": "debug",
+        "z": "bc9e283a.421548",
+        "name": "",
+        "active": true,
+        "tosidebar": false,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 905,
+        "y": 441,
+        "wires": []
+    },
+    {
+        "id": "b345460.57cafb8",
+        "type": "split",
+        "z": "bc9e283a.421548",
+        "name": "",
+        "splt": ",",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 630,
+        "y": 483,
+        "wires": [
+            [
+                "7bb5dfd7.9087d",
+                "4a955524.61a9ec"
+            ]
+        ]
+    },
+    {
+        "id": "2727eab0.258ad6",
+        "type": "comment",
+        "z": "bc9e283a.421548",
+        "name": "",
+        "info": "This displays the status of sample simulation server \nrunning on localhost \n\nport 4840 \n\n",
+        "x": 205,
+        "y": 269,
+        "wires": []
+    },
+    {
+        "id": "9fe2cf68.42ec5",
+        "type": "inject",
+        "z": "bc9e283a.421548",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "ns=2;i=3",
+        "payload": "Pressure",
+        "payloadType": "str",
+        "x": 169,
+        "y": 571,
+        "wires": [
+            [
+                "31072080.a5714"
+            ]
+        ]
+    },
+    {
+        "id": "4c7cbdea.270c04",
+        "type": "split",
+        "z": "bc9e283a.421548",
+        "name": "",
+        "splt": ",",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 621,
+        "y": 652,
+        "wires": [
+            [
+                "d94bbbd.07ad148",
+                "4a955524.61a9ec"
+            ]
+        ]
+    },
+    {
+        "id": "d94bbbd.07ad148",
+        "type": "debug",
+        "z": "bc9e283a.421548",
+        "name": "",
+        "active": true,
+        "tosidebar": false,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 858,
+        "y": 638,
+        "wires": []
+    },
+    {
+        "id": "ac307ddc.04867",
+        "type": "function",
+        "z": "bc9e283a.421548",
+        "name": "split temp value",
+        "func": "var m = msg.payload[1];\nmsg.payload = m;\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 659,
+        "y": 83,
+        "wires": [
+            [
+                "24a1450a.e705da"
+            ]
+        ]
+    },
+    {
+        "id": "24a1450a.e705da",
+        "type": "debug",
+        "z": "bc9e283a.421548",
+        "name": "",
+        "active": true,
+        "tosidebar": false,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 964,
+        "y": 143,
+        "wires": []
+    },
+    {
+        "id": "4a955524.61a9ec",
+        "type": "join",
+        "z": "bc9e283a.421548",
+        "name": "join opcua messages",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "4",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 960,
+        "y": 525,
+        "wires": [
+            [
+                "578cea4b.992704",
+                "6007d6fa.dcc638"
+            ]
+        ]
+    },
+    {
+        "id": "578cea4b.992704",
+        "type": "debug",
+        "z": "bc9e283a.421548",
+        "name": "",
+        "active": true,
+        "tosidebar": false,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1218,
+        "y": 191,
+        "wires": []
+    },
+    {
+        "id": "6007d6fa.dcc638",
+        "type": "function",
+        "z": "bc9e283a.421548",
+        "name": "convert opcua to influxdb",
+        "func": "var v1 = Number(msg.payload[1]);\nvar v2 = Number(msg.payload[3]);\n\n//msg.payload={measurement:\"harshad\",temp:val1, rh:val2};\nmsg.payload={measurement:\"opcuapython\",temp:v1, rh:v2};\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1132,
+        "y": 657,
+        "wires": [
+            [
+                "3f5ff812.6a5ef8"
+            ]
+        ]
+    },
+    {
+        "id": "3f5ff812.6a5ef8",
+        "type": "debug",
+        "z": "bc9e283a.421548",
+        "name": "",
+        "active": true,
+        "tosidebar": false,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1340,
+        "y": 568,
+        "wires": []
+    },
+    {
+        "id": "be643acd.7fa228",
+        "type": "inject",
+        "z": "1a83e31.3cb421d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "ns=1;i=1002;datatype=Double",
+        "payload": "OilTankLevel",
+        "payloadType": "str",
+        "x": 138,
+        "y": 398,
+        "wires": [
+            [
+                "693f9eb6.26a01"
+            ]
+        ]
+    },
+    {
+        "id": "693f9eb6.26a01",
+        "type": "OpcUa-Client",
+        "z": "1a83e31.3cb421d",
+        "endpoint": "7b92dedd.5f228",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": "0",
+        "time": "5",
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "name": "local opcua server",
+        "x": 434,
+        "y": 278,
+        "wires": [
+            [
+                "adf02f0e.d0b75",
+                "96e978d8.860598"
+            ]
+        ]
+    },
+    {
+        "id": "4f082331.58d1cc",
+        "type": "comment",
+        "z": "1a83e31.3cb421d",
+        "name": "",
+        "info": "This displays the status of sample simulation server \nrunning on localhost \n\nport 4840 \n\n",
+        "x": 131,
+        "y": 272,
+        "wires": []
+    },
+    {
+        "id": "65c74a88.7c00c4",
+        "type": "inject",
+        "z": "1a83e31.3cb421d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "ns=1;i=1050;datatype=Double",
+        "payload": "GasTankLevel",
+        "payloadType": "str",
+        "x": 125,
+        "y": 544,
+        "wires": [
+            [
+                "bf253377.3567a"
+            ]
+        ]
+    },
+    {
+        "id": "adf02f0e.d0b75",
+        "type": "debug",
+        "z": "1a83e31.3cb421d",
+        "name": "",
+        "active": true,
+        "tosidebar": false,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 705,
+        "y": 168,
+        "wires": []
+    },
+    {
+        "id": "96e978d8.860598",
+        "type": "join",
+        "z": "1a83e31.3cb421d",
+        "name": "join opcua messages",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 817,
+        "y": 405,
+        "wires": [
+            [
+                "c28eed69.a1706",
+                "ba346c0.7e4ec98"
+            ]
+        ]
+    },
+    {
+        "id": "c28eed69.a1706",
+        "type": "debug",
+        "z": "1a83e31.3cb421d",
+        "name": "",
+        "active": true,
+        "tosidebar": false,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1144,
+        "y": 194,
+        "wires": []
+    },
+    {
+        "id": "ba346c0.7e4ec98",
+        "type": "function",
+        "z": "1a83e31.3cb421d",
+        "name": "convert opcua to influxdb",
+        "func": "var v1 = msg.payload[0];\nvar v2 = msg.payload[1];\n\n//msg.payload={measurement:\"harshad\",temp:val1, rh:val2};\nmsg.payload={measurement:\"opcuanodejs\",t:v1, r:v2};\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1058,
+        "y": 660,
+        "wires": [
+            [
+                "ffc318e.94015e8"
+            ]
+        ]
+    },
+    {
+        "id": "ffc318e.94015e8",
+        "type": "debug",
+        "z": "1a83e31.3cb421d",
+        "name": "",
+        "active": true,
+        "tosidebar": false,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1266,
+        "y": 571,
+        "wires": []
+    },
+    {
+        "id": "bf253377.3567a",
+        "type": "OpcUa-Client",
+        "z": "1a83e31.3cb421d",
+        "endpoint": "7b92dedd.5f228",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": "0",
+        "time": "5",
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "name": "local opcua server",
+        "x": 375,
+        "y": 589,
+        "wires": [
+            [
+                "96e978d8.860598",
+                "8e2d6a7e.5a3418"
+            ]
+        ]
+    },
+    {
+        "id": "8e2d6a7e.5a3418",
+        "type": "debug",
+        "z": "1a83e31.3cb421d",
+        "name": "",
+        "active": true,
+        "tosidebar": false,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 647,
+        "y": 659,
+        "wires": []
+    },
+    {
+        "id": "80c17164.11a02",
+        "type": "OpcUa-Client",
+        "z": "bc9e283a.421548",
+        "endpoint": "b4da10e2.a22dd",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "name": "192.168.1.10  server_harry_opc.py",
+        "x": 522.5,
+        "y": 318,
+        "wires": [
+            [
+                "ac307ddc.04867",
+                "b345460.57cafb8"
+            ]
+        ]
+    },
+    {
+        "id": "31072080.a5714",
+        "type": "OpcUa-Client",
+        "z": "bc9e283a.421548",
+        "endpoint": "b4da10e2.a22dd",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "name": "192.168.1.10  server_harry_opc.py",
+        "x": 469,
+        "y": 564,
+        "wires": [
+            [
+                "4c7cbdea.270c04"
+            ]
+        ]
+    },
+    {
+        "id": "53c55dc4.b2e304",
+        "type": "OpcUa-Client",
+        "z": "f2cd0eac.a5df1",
+        "endpoint": "d76e9c7e.f7f9",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "localkeyfile": "",
+        "name": "",
+        "x": 635.5,
+        "y": 133,
+        "wires": [
+            [
+                "79b0386e.3d6368",
+                "3ab61137.8d4fde"
+            ]
+        ]
+    },
+    {
+        "id": "19373cf8.d1a933",
+        "type": "inject",
+        "z": "f2cd0eac.a5df1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "ns=2;s=Painting.Oven.Pressure",
+        "payload": "pressure",
+        "payloadType": "str",
+        "x": 320,
+        "y": 120,
+        "wires": [
+            [
+                "53c55dc4.b2e304"
+            ]
+        ]
+    },
+    {
+        "id": "34cc54fd.47550c",
+        "type": "inject",
+        "z": "f2cd0eac.a5df1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "ns=2;s=Painting.Oven.Temperature",
+        "payload": "Temperature",
+        "payloadType": "str",
+        "x": 359,
+        "y": 191,
+        "wires": [
+            [
+                "72ce6135.c747a"
+            ]
+        ]
+    },
+    {
+        "id": "386daa2b.f53bf6",
+        "type": "inject",
+        "z": "f2cd0eac.a5df1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "ns=2;s=Painting.Sprayer.Sprayer1",
+        "payload": "Sprayer1",
+        "payloadType": "str",
+        "x": 350,
+        "y": 247,
+        "wires": [
+            [
+                "6e792cca.a06734"
+            ]
+        ]
+    },
+    {
+        "id": "ec78ebc1.c5ada8",
+        "type": "inject",
+        "z": "f2cd0eac.a5df1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "ns=2;s=Painting.Sprayer.Sprayer2",
+        "payload": "Sprayer2",
+        "payloadType": "str",
+        "x": 353,
+        "y": 292,
+        "wires": [
+            [
+                "7586f2d2.eddbdc"
+            ]
+        ]
+    },
+    {
+        "id": "2b16c7fe.dcc178",
+        "type": "inject",
+        "z": "f2cd0eac.a5df1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "ns=2;s=Painting.Sprayer.Sprayer3",
+        "payload": "Sprayer3",
+        "payloadType": "str",
+        "x": 356,
+        "y": 348,
+        "wires": [
+            [
+                "39287246.761afe"
+            ]
+        ]
+    },
+    {
+        "id": "85df8885.ddae78",
+        "type": "inject",
+        "z": "f2cd0eac.a5df1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "ns=2;s=Painting.Tank.Tank1",
+        "payload": "Tank1",
+        "payloadType": "str",
+        "x": 439,
+        "y": 393,
+        "wires": [
+            [
+                "bc24cbe1.58b588"
+            ]
+        ]
+    },
+    {
+        "id": "7b364dac.8374d4",
+        "type": "inject",
+        "z": "f2cd0eac.a5df1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "ns=2;s=Painting.Tank.Tank2",
+        "payload": "Tank2",
+        "payloadType": "str",
+        "x": 433,
+        "y": 446,
+        "wires": [
+            [
+                "4c5a2d93.615304"
+            ]
+        ]
+    },
+    {
+        "id": "de88b040.e38b5",
+        "type": "inject",
+        "z": "f2cd0eac.a5df1",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "ns=2;s=Painting.Tank.Tank3",
+        "payload": "Tank3",
+        "payloadType": "str",
+        "x": 428,
+        "y": 507,
+        "wires": [
+            [
+                "22eff7a5.ffe3f8"
+            ]
+        ]
+    },
+    {
+        "id": "91e32669.292fa8",
+        "type": "debug",
+        "z": "f2cd0eac.a5df1",
+        "name": "",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1228,
+        "y": 71,
+        "wires": []
+    },
+    {
+        "id": "79b0386e.3d6368",
+        "type": "join",
+        "z": "f2cd0eac.a5df1",
+        "name": "join opcua messages",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "8",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1170,
+        "y": 181,
+        "wires": [
+            [
+                "91e32669.292fa8",
+                "ac90b584.9e2108"
+            ]
+        ]
+    },
+    {
+        "id": "72ce6135.c747a",
+        "type": "OpcUa-Client",
+        "z": "f2cd0eac.a5df1",
+        "endpoint": "d76e9c7e.f7f9",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "name": "",
+        "x": 633,
+        "y": 182,
+        "wires": [
+            [
+                "79b0386e.3d6368",
+                "288c7520.b153fa"
+            ]
+        ]
+    },
+    {
+        "id": "6e792cca.a06734",
+        "type": "OpcUa-Client",
+        "z": "f2cd0eac.a5df1",
+        "endpoint": "d76e9c7e.f7f9",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "name": "",
+        "x": 625,
+        "y": 240,
+        "wires": [
+            [
+                "79b0386e.3d6368",
+                "d07ce1c7.cca1a"
+            ]
+        ]
+    },
+    {
+        "id": "7586f2d2.eddbdc",
+        "type": "OpcUa-Client",
+        "z": "f2cd0eac.a5df1",
+        "endpoint": "d76e9c7e.f7f9",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "name": "",
+        "x": 622.5,
+        "y": 289,
+        "wires": [
+            [
+                "79b0386e.3d6368",
+                "1c74da7c.8f6386"
+            ]
+        ]
+    },
+    {
+        "id": "39287246.761afe",
+        "type": "OpcUa-Client",
+        "z": "f2cd0eac.a5df1",
+        "endpoint": "d76e9c7e.f7f9",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "name": "",
+        "x": 696,
+        "y": 343,
+        "wires": [
+            [
+                "79b0386e.3d6368",
+                "91666e3b.0ac06"
+            ]
+        ]
+    },
+    {
+        "id": "bc24cbe1.58b588",
+        "type": "OpcUa-Client",
+        "z": "f2cd0eac.a5df1",
+        "endpoint": "d76e9c7e.f7f9",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "name": "",
+        "x": 693.5,
+        "y": 392,
+        "wires": [
+            [
+                "79b0386e.3d6368",
+                "6c97861c.fb0cc8"
+            ]
+        ]
+    },
+    {
+        "id": "4c5a2d93.615304",
+        "type": "OpcUa-Client",
+        "z": "f2cd0eac.a5df1",
+        "endpoint": "d76e9c7e.f7f9",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "name": "",
+        "x": 699,
+        "y": 446,
+        "wires": [
+            [
+                "79b0386e.3d6368",
+                "69099932.12e638"
+            ]
+        ]
+    },
+    {
+        "id": "22eff7a5.ffe3f8",
+        "type": "OpcUa-Client",
+        "z": "f2cd0eac.a5df1",
+        "endpoint": "d76e9c7e.f7f9",
+        "action": "read",
+        "deadbandtype": "a",
+        "deadbandvalue": 1,
+        "time": 10,
+        "timeUnit": "s",
+        "certificate": "n",
+        "localfile": "",
+        "name": "",
+        "x": 696.5,
+        "y": 495,
+        "wires": [
+            [
+                "79b0386e.3d6368",
+                "8375b50e.53dc28"
+            ]
+        ]
+    },
+    {
+        "id": "ac90b584.9e2108",
+        "type": "function",
+        "z": "f2cd0eac.a5df1",
+        "name": "convert opcua to influxdb",
+        "func": "var v1 = msg.payload[0];\nvar v2 = msg.payload[1];\nvar v3 = msg.payload[2];\nvar v4 = msg.payload[3];\nvar v5 = msg.payload[4];\nvar v6 = msg.payload[5];\nvar v7 = msg.payload[6];\nvar v8 = msg.payload[7];\n\n\n\n//msg.payload={measurement:\"harshad\",temp:val1, rh:val2};\nmsg.payload={measurement:\"kepware\",pressure:v1, temp:v2, sprayer1:v3, sprayer2:v4, sprayer3:v5, tank1:v6, tank2:v7, tank3:v8}\n\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1062,
+        "y": 428,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3ab61137.8d4fde",
+        "type": "ui_gauge",
+        "z": "f2cd0eac.a5df1",
+        "name": "",
+        "group": "d96329a7.167f18",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Pressure",
+        "label": "units",
+        "format": "{{value | number:1 }}",
+        "min": 0,
+        "max": "500",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 820,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "288c7520.b153fa",
+        "type": "ui_gauge",
+        "z": "f2cd0eac.a5df1",
+        "name": "",
+        "group": "d96329a7.167f18",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperature",
+        "label": "units",
+        "format": "{{value | number:1 }}",
+        "min": 0,
+        "max": "500",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 850,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "d07ce1c7.cca1a",
+        "type": "ui_gauge",
+        "z": "f2cd0eac.a5df1",
+        "name": "",
+        "group": "d96329a7.167f18",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "Sprayer",
+        "label": "units",
+        "format": "{{value | number:1 }}",
+        "min": 0,
+        "max": "500",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 920,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "1c74da7c.8f6386",
+        "type": "ui_gauge",
+        "z": "f2cd0eac.a5df1",
+        "name": "",
+        "group": "d96329a7.167f18",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "Sprayer 2",
+        "label": "units",
+        "format": "{{value | number:1 }}",
+        "min": 0,
+        "max": "1",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 920,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "91666e3b.0ac06",
+        "type": "ui_gauge",
+        "z": "f2cd0eac.a5df1",
+        "name": "",
+        "group": "d96329a7.167f18",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "donut",
+        "title": "Sprayer 3",
+        "label": "units",
+        "format": "{{value | number:1 }}",
+        "min": 0,
+        "max": "1",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 920,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "6c97861c.fb0cc8",
+        "type": "ui_gauge",
+        "z": "f2cd0eac.a5df1",
+        "name": "",
+        "group": "d96329a7.167f18",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Tank 1",
+        "label": "units",
+        "format": "{{value | number:1 }}",
+        "min": 0,
+        "max": "500",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 910,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "69099932.12e638",
+        "type": "ui_gauge",
+        "z": "f2cd0eac.a5df1",
+        "name": "",
+        "group": "d96329a7.167f18",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Tank 2",
+        "label": "units",
+        "format": "{{value | number:1 }}",
+        "min": 0,
+        "max": "1",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 910,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "8375b50e.53dc28",
+        "type": "ui_gauge",
+        "z": "f2cd0eac.a5df1",
+        "name": "",
+        "group": "d96329a7.167f18",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Tank 3",
+        "label": "units",
+        "format": "{{value | number:1 }}",
+        "min": 0,
+        "max": "1",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 910,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "a2a3f2fe.ddbcd",
+        "type": "catch",
+        "z": "f2cd0eac.a5df1",
+        "name": "",
+        "scope": [
+            "72ce6135.c747a"
+        ],
+        "uncaught": false,
+        "x": 310,
+        "y": 40,
+        "wires": [
+            [
+                "3775a54c.4025fa"
+            ]
+        ]
+    },
+    {
+        "id": "3775a54c.4025fa",
+        "type": "debug",
+        "z": "f2cd0eac.a5df1",
+        "name": "",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 530,
+        "y": 40,
+        "wires": []
+    }
+]
