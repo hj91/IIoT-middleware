@@ -16,7 +16,7 @@
         "node-red-contrib-iiot-jwt": "~1.0.0",
         "node-red-contrib-mcprotocol": "~1.2.0",
         "node-red-contrib-modbus": "~5.13.3",
-        "node-red-contrib-opcua": "~0.2.118",
+        "node-red-contrib-opcua": "~0.2.220",
         "node-red-contrib-opcua-server": "~0.4.1",
         "node-red-contrib-open-protocol": "~1.0.3",
         "node-red-dashboard": "~2.26.2",
