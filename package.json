@@ -23,7 +23,6 @@
         "node-red-contrib-buffer-parser": "~3.1.5",
         "node-red-contrib-influxdb": "~0.6.0",
         "node-red-contrib-s7": "~3.0.0-beta.3",
-        "node-red-contrib-lativ": "~1.0.3",
         "random-generator_node-red-contrib": "~1.0.0",
         "node-red-node-random": "~0.4.0",
         "node-red-contrib-fs": "~1.4.1"
