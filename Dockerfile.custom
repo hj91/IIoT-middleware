@@ -17,6 +17,7 @@ RUN set -ex && \
         curl \
         nano \
         git \
+        python3 \
         openssl \
         openssh-client \
         ca-certificates && \
@@ -33,6 +34,7 @@ WORKDIR /usr/src/node-red
 
 # package.json contains Node-RED NPM module and node dependencies
 COPY package.json .
+COPY logo.jpg /usr/src/node-red
 COPY flows.json /data
 COPY settings.js /data
 
@@ -40,7 +42,7 @@ COPY settings.js /data
 FROM base AS build
 
 # Install Build tools
-RUN apk add --no-cache --virtual buildtools build-base linux-headers udev python && \
+RUN apk add --no-cache --virtual buildtools build-base linux-headers udev python3 && \
     npm install --unsafe-perm --no-update-notifier --no-fund --only=production && \
     /tmp/remove_native_gpio.sh && \
     cp -R node_modules prod_node_modules
